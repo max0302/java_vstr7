@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        let br = () => {
+            document.write('<br>');
+        }
+        let write = (str) => {
+            document.write(str);   
+        }
+    </script>
+
+<script>
+    // Дата
+    // let cur_date = new Date();
+    // console.log(cur_date);
+    // document.write(cur_date);
+
+    // document.write(`<br>`);
+    // let cur_date1 = new Date(135920000000);
+    // document.write(cur_date1);
+
+    // document.write(`<br>`);
+    // let cur_date2 = new Date('10 February 2019');
+    // document.write(cur_date2);
+
+    // document.write(`<br>`);
+    // cur_date3 = new Date(1996, 5, 12, 5, 0, 0, 4);
+    // document.write(cur_date3);
+
+    // // получение времении даты
+    // // cur_date4.getDate();
+    // // document.write(cur_date4);
+    // // cur_date5.getDay();
+    // // document.write(cur_date5);
+    // // cur_date6.toDateString();
+    // // cur_date7.toTimeString();
+
+    // // //задать время
+    // // cur_date5.setDate();
+    // // cur_date6.setDay();
+    // // cur_date7.setHours();
+
+    // document.write(`<br>`);
+    // document.write(Math.ceil(5.2));
+    // document.write(Math.floor(5.2));
+    // document.write(Math.round(5.2));
+
+    // //random
+    // document.write(`<br>`);
+    // Object.prototype.next = function(max){
+    //     return Math.round(Math.random()*max);
+    // }
+    // document.write(Math.next(100));
+
+    // //String
+    // br();
+    // let hello = 'aaa bbb ccc';
+    // write(hello);
+    // br();
+    // write(hello.length);
+
+    // br();
+    // write('Тук '.repeat(3));
+
+
+    // // поиск в строке
+    // // indexOf
+    // // lastIndexOf
+    // br();
+    // write('aaaaaabbbbbcccc'.indexOf('bbb'));
+    // br();
+    // write('aaaaaabbbbbcccc'.lastIndexOf('bbb'));
+
+//     1. Написать функцию, которая принимает строку и выводит
+// статистику о ней: количество букв, количество цифр и
+// количество других знаков.
+    // function dif(str){
+    //     str_a = 'qwertyuiopasdfghjklzxcvbnm';
+    //     str_d = '0123456789';
+    //     let quan_a = 0;
+    //     let quan_d = 0;
+    //     let quan =0;
+    //     let b=0;
+    //     for (let i=0;i<=str.length;i++){
+    //         if(str_a.indexOf(str[i]) != -1)
+    //             {quan_a++; b=1}
+    //         if(str_d.indexOf(str[i]) != -1)
+    //             {quan_d++; b=1}
+    //         if(b==0)
+    //             quan++;
+    //         b=0;
+    //     }
+    //     document.write(`${quan_a} количество букв ${quan_d} количество цифр ${quan-1} прочие символы`);
+    // }
+    // dif('asd123');
+
+//     2. Написать функцию, которая принимает двузначное число
+// и возвращает его в текстовом виде.
+// Например: 35 – тридцать пять, 89 – восемьдесят девять,
+// 12 – двенадцать.
+
+    // function trans(a){
+    //     let str = a.toString();
+    //     if(str[0]=='1')
+    //     {
+    //         if(str[1]==1)
+    //             document.write('Одиннадцать')
+    //     }
+    //     if(str[0]=='2')
+    //     {
+    //         document.write('Двадцать ');
+    //         if(str[1]=='0')
+    //             document.write('');
+    //         if(str[1]=='1')
+    //             document.write('Один');
+    //     }
+    //     // и т.д.
+    // }
+    // trans(11);
+    // document.write(`<br>`);
+    // trans(21);
+
+//     3. Написать функцию, которая заменяет в полученной строке
+// большие буквы на маленькие, маленькие – на большие, а
+// цифры – на знак нижнего подчеркивания.
+    function transform(str){
+        let str_Up = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+        let str_Do = 'qwertyuiopasdfghjklzxcvbnm';
+        let str_d = '0123456789';
+        let rez ='';
+        for(let i=0; i<=str.length;i++){
+            if(str_Up.indexOf(str[i])!=-1)
+                {rez += str[i].toLowerCase();continue;}
+            if(str_Do.indexOf(str[i])!=-1)
+                {rez += str[i].toUpperCase();continue;}
+            if(str_d.indexOf(str[i])!=-1)
+                {rez += '_';}  
+        }
+        document.write(rez);
+    }
+    transform('QQQwww111');
+</script>
+</body>
+</html>
