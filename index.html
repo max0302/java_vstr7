@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Jav vstr 7</title>
 </head>
 <body>
 
-    <script>
-        let br = () => {
-            document.write('<br>');
-        }
-        let write = (str) => {
-            document.write(str);   
-        }
-    </script>
+<!--    <script>-->
+<!--        let br = () => {-->
+<!--            document.write('<br>');-->
+<!--        }-->
+<!--        let write = (str) => {-->
+<!--            document.write(str);   -->
+<!--        }-->
+<!--    </script>-->
 
 <script>
     // Дата
@@ -129,22 +129,195 @@
 //     3. Написать функцию, которая заменяет в полученной строке
 // большие буквы на маленькие, маленькие – на большие, а
 // цифры – на знак нижнего подчеркивания.
-    function transform(str){
-        let str_Up = 'QWERTYUIOPASDFGHJKLZXCVBNM';
-        let str_Do = 'qwertyuiopasdfghjklzxcvbnm';
-        let str_d = '0123456789';
-        let rez ='';
-        for(let i=0; i<=str.length;i++){
-            if(str_Up.indexOf(str[i])!=-1)
-                {rez += str[i].toLowerCase();continue;}
-            if(str_Do.indexOf(str[i])!=-1)
-                {rez += str[i].toUpperCase();continue;}
-            if(str_d.indexOf(str[i])!=-1)
-                {rez += '_';}  
-        }
-        document.write(rez);
+//     function transform(str){
+//         let str_Up = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+//         let str_Do = 'qwertyuiopasdfghjklzxcvbnm';
+//         let str_d = '0123456789';
+//         let rez ='';
+//         for(let i=0; i<=str.length;i++){
+//             if(str_Up.indexOf(str[i])!== -1)
+//                 {rez += str[i].toLowerCase();continue;}
+//             if(str_Do.indexOf(str[i])!== -1)
+//                 {rez += str[i].toUpperCase();continue;}
+//             if(str_d.indexOf(str[i])!== -1)
+//                 {rez += '_';}
+//         }
+//         document.write(rez);
+//     }
+//     transform('QQQwww111');
+
+    // 4. Написать функцию, которая преобразует названия css-
+    // стилей с дефисом в название в СamelСase стиле: font-size
+    // в fontSize, background-color в backgroundColor, textalign
+    // в textAlign.
+    // function CamelCase(str) {
+    //     let ind = str.indexOf("-");
+    //     str = str.replace("-","");
+    //
+    //     str = str.substring(0, ind) + str.charAt(ind).toUpperCase() + str.substring(ind + 1);
+    //     return str;
+    // }
+    // document.write(CamelCase("font-size"));
+
+    // 5. Написать функцию, которая принимает словосочетание
+    // и превращает его в аббревиатуру.
+    //     Например: cascading style sheets в CSS, объектно-
+    // ориентированное программирование в ООП.
+
+    // function getAbbreviation(str) {
+    //     let arr = str.split(" ");
+    //     let firstLetters = arr.map(val => val[0]);
+    //     // let firstLetters='';
+    //     // for (let i=0;i<arr.length;i++) {
+    //     //     firstLetters+=arr[i];
+    //     // }
+    //     return  firstLetters.join("").toUpperCase();
+    // }
+    // document.write(getAbbreviation("hyper text markup language"));
+
+    // 6. Написать функцию, которая принимает любое коли-
+    // чество строк, объединяет их в одну длинную строку и
+    // возвращает ее.
+
+    // function concat(...strings) {
+    //     return strings.join("");
+    // }
+    //
+    // document.write(concat("Do", "this", "words", "as", "one", "string"));
+
+    // function concat(...strings) {
+    //     return strings.join("");
+    // }
+
+    // task 7
+
+    // Написать функцию – калькулятор. Функция принимает
+    // строку с примером, определяет, какое действие необходимо
+    // выполнить (+ - * /), переводит операнды в числа, решает
+    // пример и возвращает результат.
+
+    // function Calculator(expression) {
+    //     expression = expression.replace(/\s/g, "").trim(); // remove all spaces
+    //
+    //     // trying to find operation sign
+    //     // if we dont have a "+" expression.indexOf("+") will return -1
+    //     // I make expression.indexOf("+") + 1 to check is true or false (0 == false)
+    //     let indexOfOperation =
+    //         expression.indexOf("+") + 1
+    //         || expression.indexOf("-") + 1
+    //         || expression.indexOf("*") + 1
+    //         || expression.indexOf("/") + 1;
+    //
+    //     indexOfOperation--;
+    //
+    //     const loperand = +expression.substring(0, indexOfOperation); // take left operand
+    //     const roperand = +expression.substring(indexOfOperation + 1, expression.length); // take right operand
+    //
+    //     let result;
+    //     const operationSign = expression.charAt(indexOfOperation);
+    //     // parse operation sign
+    //     switch (operationSign) {
+    //         case "+":
+    //             result = loperand + roperand; break;
+    //         case "-":
+    //             result = loperand - roperand; break;
+    //         case "*":
+    //             result = loperand * roperand; break;
+    //         case "/":
+    //             result = loperand / roperand; break;
+    //
+    //         default: new Error("Invalid string in param");
+    //     }
+    //
+    //     return `${loperand} ${operationSign} ${roperand} = ${Math.round(result * 100) / 100}`;
+    //
+    // }
+    //
+    // document.write(Calculator("12 / 3"));
+
+    // task 8
+
+    // Написать функцию, которая получает url и выводит под-
+    // робную информацию о нем.
+    // Например: url “https://itstep.org/ua/about”, информация
+    // “протокол: https, домен: itstep.org, путь: /ua/about”.
+
+    // function parseUrl(url) {
+    //     let urlInfo = {};
+    //
+    //     let protocol = url.substring(0, url.indexOf("//") + 2); // https://
+    //     let pureProtocol = url.substring(0, url.indexOf(":")); // https
+    //
+    //     let trimedUrl = url.replace(protocol, ""); // itstep.org/ua/about
+    //
+    //     let domain = trimedUrl.substring(0, trimedUrl.indexOf("/")); // itstep.org
+    //     let path = trimedUrl.substring(trimedUrl.indexOf("/"), trimedUrl.length); // /ua/about
+    //
+    //     return {
+    //         protocol: pureProtocol,
+    //         domain: domain,
+    //         path: path,
+    //     }
+    // }
+    //
+    // let url = "https://itstep.org/ua/about";
+    //
+    // console.log("Info about url: " + url);
+    // console.log("Protocol: " + parseUrl(url).protocol);
+    // console.log("Domain: " + parseUrl(url).domain);
+    // console.log("Path: " + parseUrl(url).path);
+
+    // task 9
+
+    // Написать функцию, которая принимает строку и раздели-
+    // тель и возвращает массив подстрок, разбитых с помощью
+    // указанного разделителя.
+    // Например: строка “10/08/2020”, разделитель “/”, результат:
+    // “10”, “08”, “2020”.
+    // Выполняя задание, не используйте функцию split().
+
+    // function split(str, separator) {
+    //     let arr = [];
+    //
+    //     do {
+    //         let trimed;
+    //
+    //         // если есть "/", тогда берем строку до него
+    //         // если нет - то вырезаем все до конца строки
+    //         let end = str.indexOf(separator) != -1 ? str.indexOf(separator) : str.length;
+    //
+    //         trimed = str.substring(0, end); // берем 10
+    //         str = str.replace(str.substring(0, end + 1), ""); // вырезали 10/
+    //         arr.push('"' + trimed + '"');
+    //
+    //         // на следующей итерации будет 02/2000
+    //
+    //     } while (str); // пока есть, что вырезать
+    //
+    //     return arr;
+    // }
+    //
+    // alert(split("10/02/2000", "/"));
+
+    // task 10
+
+    // Написать функцию вывода текста по заданному шаблону.
+    // Функция принимает первым параметром шаблон, в тексте
+    // которого может использоваться %, после символа % ука-
+    // зывается индекс входного параметра. При выводе вместо
+    // %индекс необходимо вывести значение соответствующего
+    // входного параметра.
+    // Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10,
+    // 8, 2020) должна вывести “Today is Monday 10.8.2020”.
+
+    function print(template, ...params) {
+        for (index in params)
+            template = template.replace("%" + (+index + 1), params[index]);
+
+        alert(template);
     }
-    transform('QQQwww111');
+
+    print("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020)
 </script>
 </body>
 </html>
